@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\InventoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +25,8 @@ Route::get('/table', function () {
 });
 
 Route::get('/products/read_data',[AjaxController::class, 'readData']);
+
+//Products see and edit
+
+Route::get('inventory',[InventoryController::class, 'index']);
+Route::post('inventory/update',[InventoryController::class, 'update']);
